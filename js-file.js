@@ -4,7 +4,6 @@ function randColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
 }
 
-// shade darker
 function shader() {
     let temp = event.target.style.backgroundColor;
     let newCol = '';
@@ -21,6 +20,8 @@ function shader() {
     return newCol;
 }
 
+function black(){return "rgb(1,1,1)"}
+
 for (let i = 0; i < 16 * 16; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
@@ -28,26 +29,51 @@ for (let i = 0; i < 16 * 16; i++) {
     grid[0].appendChild(cell)
 };
 
+var currentPen = "black";
+
+
+function penSelector(user){
+    if (user == "rgb"){
+        return randColor();
+    }else if (user == "shade"){
+        return shader();
+    }else{
+        return black();
+    }
+}
+
+const rgb = document.querySelector(".rgb");
+const blackButton = document.querySelector(".black");
+const shade = document.querySelector(".shade");
+
+
+rgb.addEventListener("click", function abd(){
+    currentPen = "rgb";
+});
+blackButton.addEventListener("click", function abd(){
+    currentPen = "black";
+});
+shade.addEventListener("click", function abd(){
+    currentPen = "shade";
+});
+
+
 function hoverEnter(event) {
-    event.target.style.backgroundColor = "rgb(1,1,1)"; // black
+    event.target.style.backgroundColor = penSelector(currentPen); // black
     //event.target.style.backgroundColor = randColor();
     //event.target.style.backgroundColor = shader();
+    console.log(currentPen);
 }
 
 const cells = document.querySelectorAll(".cell");
+const slider = document.getElementById("myRange");
 
 cells.forEach((cell) => {
     cell.addEventListener("mouseenter", hoverEnter)
 });
 
-const button = document.querySelector(".new");
-
-button.addEventListener("click", function changeGrid(event) {
-
-    let user = prompt("How many cells do you want? \n(Maximum of 100)");
-    if (user == undefined) { user = 16 };
-    if (user > 100) { user = 100; }
-
+slider.addEventListener("click", function changeGrid(event) {
+    let user = slider.value;
     const oldCells = document.querySelectorAll(".cell");
 
     oldCells.forEach((cell) => {
