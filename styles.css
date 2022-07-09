@@ -1,15 +1,19 @@
+body{
+    text-align: center;
+}
+
+
 .grid {
     display: grid;
-    gap: 10px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    max-width: 150rem;
+    /*gap: 1%;*/
+    width: auto;
+    margin:100px;
     grid-template-columns: repeat(16, 1fr);
   }
 
   .cell {
-    padding: 10px;
-    background-color: #ccc;
+    padding: 1%;
+    /*background: #ccc;*/
     aspect-ratio: 1;
   }
 
