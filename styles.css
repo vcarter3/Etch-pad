@@ -1,4 +1,4 @@
-body{
+body {
     text-align: center;
 }
 
@@ -7,14 +7,27 @@ body{
     display: grid;
     /*gap: 1%;*/
     width: auto;
-    margin:100px;
+    
     grid-template-columns: repeat(16, 1fr);
-  }
+}
 
-  .cell {
+.cell {
     padding: 1%;
     /*background: #ccc;*/
     aspect-ratio: 1;
-  }
+}
 
-  
+
+/*larger than 600 pixels*/
+@media (min-width: 600px) {
+    .grid {
+        margin: 25px 100px;
+    }
+}
+
+/*larger than 900 pixels*/
+@media (min-width: 900px) {
+    .grid {
+        margin: 25px 500px;
+    }
+}

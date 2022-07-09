@@ -25,17 +25,13 @@ for (let i = 0; i < 16 * 16; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
     cell.style.backgroundColor = "rgb(204,204,204)";
-    //cell.setAttribute('background',"rgb(204,204,204)"); // background starting colour in rgb
-    //cell.textContent = ':)';
     grid[0].appendChild(cell)
 };
 
 function hoverEnter(event) {
-    //event.target.style.backgroundColor = "rgb(255,255,255)"; // background starting colour in rgb
+    event.target.style.backgroundColor = "rgb(1,1,1)"; // black
     //event.target.style.backgroundColor = randColor();
-    event.target.style.backgroundColor = shader();
-
-
+    //event.target.style.backgroundColor = shader();
 }
 
 const cells = document.querySelectorAll(".cell");
@@ -63,6 +59,7 @@ button.addEventListener("click", function changeGrid(event) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         grid[0].appendChild(cell)
+        cell.style.backgroundColor = "rgb(204,204,204)";
         cell.addEventListener("mouseenter", hoverEnter)
     }
 
