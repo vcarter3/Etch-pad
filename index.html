@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="shortcut icon" href="favicon.ico">
+
 </head>
+
 <body>
-    <div>
-        reset grid and change size:
-    <input type="range" min="1" max="64" value="50" class="slider" id="myRange">
-    </div>
-    </div>
-    
-    <div class="pen">
-    <button class="rgb">rgb</button>
-    <button class="black">black</button>
-    <button class="shade">shade</button>
+    <h2>Etch pad</h2>
+
+    <div class="container">
+
+        <div class="outer">
+            <div class="grid">
+            </div>
+        </div>
+
+        <div class="pen">
+            <button class="rgb">rgb🎨</button>
+            <button class="black">black🖤</button>
+            <button class="shade">shade🕶️</button>
+        </div>
+
+        <div class="reset">
+            Reset grid size:
+            <input type="range" min="1" max="64" value="50" class="slider" id="myRange">
+        </div>
+
     </div>
 
 
-    <div class="grid">
-    </div>
+
+
 
     </div>
     <script src="js-file.js"></script>
 </body>
+
 </html>
