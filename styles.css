@@ -1,14 +1,86 @@
 body {
     text-align: center;
+    background-color: brown;
+    font-size: 20px;
+    font-family: monospace;
+    color: rgb(247, 255, 193);
+}
+
+.outer {
+    width: 50%;
+    aspect-ratio: 1;
+    margin: 10px;
+    padding: 2px;
+    border: 12px solid rgb(178, 178, 178);
+    border-radius: 10px;
+    background-color: rgb(202, 202, 202);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+button {
+    border-radius: 3px;
+    font-size: large;
+    background-color: white;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 10%;
+    font-family: monospace;
+
+}
+
+button:hover {
+    border-radius: 3px;
+    background-color: rgb(218, 218, 218);
+    font-family: monospace;
+
+}
+
+.slider {
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    cursor: pointer;
+
+}
+
+.slider:hover {
+    background-color: rgb(179, 179, 179);
+}
+
+.reset {
+    background-color: white;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+    font-size: large;
+
 }
 
 
 .grid {
     display: grid;
     /*gap: 1%;*/
-    width: auto;
-    
+    width: 95%;
     grid-template-columns: repeat(16, 1fr);
+
 }
 
 .cell {
@@ -16,19 +88,20 @@ body {
     padding: 1%;
     /*background: #ccc;*/
     aspect-ratio: 1;
+    cursor: crosshair;
 }
 
 
 /*larger than 600 pixels*/
 @media (min-width: 600px) {
-    .grid {
-        margin: 25px 100px;
+    .container {
+        margin: 10px 5%;
     }
 }
 
 /*larger than 900 pixels*/
 @media (min-width: 900px) {
-    .grid {
-        margin: 25px 500px;
+    .container {
+        margin: 10px 15%;
     }
 }

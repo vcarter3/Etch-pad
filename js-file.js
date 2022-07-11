@@ -15,8 +15,6 @@ for (let i = 0; i < 16 * 16; i++) {
 
 function randColor() {
     return "rgb(" + (Math.floor(Math.random() * 255)).toString() + "," + (Math.floor(Math.random() * 255)).toString() + "," + (Math.floor(Math.random() * 255)).toString() + ")";
-
-    //return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
 }
 
 function shader(event) {
